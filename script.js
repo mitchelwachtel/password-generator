@@ -10,11 +10,14 @@ var useSpecialCharacters = false;
 var useNumbers = false;
 var useLowerCase = false;
 var useUpperCase = false;
+var typeArray = [];
 var password = '';
 
+
 // Pass an array into this function and it gives you a random element from it
-function randomCharacter(array) {
-  var index = Math.floor(Math.random()*array.length);
+function randomElement(array) {
+  var y = array.length;
+  var index = Math.floor(Math.random()*y);
   return array[index];
 }
 
@@ -37,15 +40,37 @@ function generatePassword() {
   }
 
   var useSpecialCharacters = confirm('To use special characters in your password, please select OK \nFor no special characters, please select Cancel');
+    if (useSpecialCharacters) {
+      typeArray.push(specialCharacters);
+    }
   var useNumbers = confirm('To use numbers in your password, please select OK \nFor no numbers, please select Cancel');
+    if (useNumbers) {
+      typeArray.push(numbers);
+  }
   var useLowerCase = confirm('To use lowercase letters in your password, please select OK \nFor no lowercase letters, please select Cancel');
+    if (useLowerCase) {
+      typeArray.push(lowerCase);
+  }
   var useUpperCase = confirm('To use uppercase letters in your password, please select OK \nFor no uppercase letters, please select Cancel');
+    if (useUpperCase) {
+      typeArray.push(upperCase);
+  }
 
-  
+
+  // if user selects none of the potential types of characters, then the function alerts and restarts.
+  if (useSpecialCharacters === false && useNumbers === false && useLowerCase === false && useUpperCase === false) {
+    alert('You must allow at least 1 character type!');
+    generatePassword();
+  }
+
+  for (i=0; i<numOfChar; i++) {
+    var charType = randomElement(typeArray);
+    var x = randomElement(charType);
+    password = password + x;
+  }
 
 
 
-  
 
   return password;
 }
