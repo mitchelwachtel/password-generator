@@ -33,10 +33,12 @@ function generatePassword() {
   if (numOfChar < 8 || numOfChar > 128) {
     alert('Number of characters must be an integer between 8 and 128.')
     generatePassword();
+    return;
   }
   if (isNaN(numOfChar)) {
     alert('Number of characters must be an integer between 8 and 128.')
     generatePassword();
+    return;
   }
 
   var useSpecialCharacters = confirm('To use special characters in your password, please select OK \nFor no special characters, please select Cancel');
@@ -61,6 +63,7 @@ function generatePassword() {
   if (useSpecialCharacters === false && useNumbers === false && useLowerCase === false && useUpperCase === false) {
     alert('You must allow at least 1 character type!');
     generatePassword();
+    return;
   }
 
   for (i=0; i<numOfChar; i++) {
