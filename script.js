@@ -10,8 +10,7 @@ var useSpecialCharacters = false;
 var useNumbers = false;
 var useLowerCase = false;
 var useUpperCase = false;
-var typeArray = [];
-var password = '';
+
 
 
 // Pass an array into this function and it gives you a random element from it
@@ -23,6 +22,9 @@ function randomElement(array) {
 
 // This function needs to start the process of asking for the number of characters & type of characters and ends with returning password
 function generatePassword() {
+  var typeArray = [];
+  var password = '';
+  
   var numOfChar = prompt('How many characters would you like in your password?\nChoose an integer between 8 and 128.', '');
   // If user clicks cancel, this will end the function
   if (numOfChar === null) {
