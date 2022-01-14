@@ -31,6 +31,7 @@ function generatePassword() {
   if (numOfChar === null){      // If user clicks cancel, this will end the function
     return;
   }
+
   numOfChar = Math.floor(parseFloat(numOfChar));
   
   if (numOfChar > 7 && numOfChar < 129) {
@@ -88,12 +89,13 @@ function generatePassword() {
 
 
   password = scrambledPasswordArray.join('');
+  
 }
 
 
+return password;
 
-
-  return password;
+  
 }
 
 
