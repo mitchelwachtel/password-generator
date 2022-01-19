@@ -7,11 +7,13 @@
 
 Technologies used: Javascript with HTML & CSS. GitHub pages was used in order to publish the site.
 
+This browser app generates a completely random password based on your preferences. It will ask how many characters you would like in the password and which character types you would like. All character types selected will be included in your password.
+
 My main motivation was to practice my use of javascript logic. Having to embed functions in functions, use prompts, if statements, loops, and array operations all at the same time was a challenge I was really excited for. I really enjoy building things: Decks, gardens, tables, etc. I love the feeling of accomplishment when I have successfully built something practical. I have learned that I get that same feeling from completing these coding projects. Each new skill in javascript, html, and css that I have learned feels like a new power tool. My mind is trying to keep up with the possibilities. This project brought me great joy.
 
-I learned that you can break (end) a function with return. I learned fundamentally the importance of scope of variables: I had originally put the password variable on the global scope, so my original function was concating new passwords right behind previous ones. I learned how powerful the Math.random() function is and I feel like I'm getting more confortable in using it well. I learned about the Fisher and Yates Method for scrambling, this process that I read about on Stack Overflow and Wikipedia helped me to think through the logic I needed to write.
+I learned that you can break (end) a function with return. I learned fundamentally the importance of scope of variables: I had originally put the password variable on the global scope, so my original function was concating new passwords right behind previous ones. I learned how powerful the Math.random() function is and I feel like I'm getting more comfortable in using it well. I learned about the Fisher and Yates Method for scrambling, this process that I read about on Stack Overflow and Wikipedia helped me to think through the logic I needed to write.
 
-This browser app generates a completely random password based on your preferences. It will ask how many characters you would like in the password and which character types you would like. All character types selected will be included in your password.
+Although the general algorithm that I used for this project was pretty straightforward and it made sense to me fairly quickly, I had a killer time trying to make sure the generator did not display 'undefined' in certain instances when canceling a prompt. I spent the better part of the week coming back to this problem and trying different possible solutions. Through tracing the script from the writePassword() function, I realized that the generatePassword() function had to return a password for the space, and if I returned null then the 'Your Secure Password' text would be unaltered on the document.
 
 Next steps: style the page with CSS, give it a more exciting CSS theme.
 
